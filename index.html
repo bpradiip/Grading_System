@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="https://img.icons8.com/color/48/000000/nepal.png" style="border-radius: 50%;" type="image/x-icon">
+	<title>Grading System</title>
+	<style>
+		body {
+			background-color: #cfcfcf;
+		}
+
+		h1 {
+			font-size: 36px;
+			color: #383838;
+			text-align: center;
+			margin-top: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		form {
+			margin: 50px auto;
+			width: 400px;
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 20px #cccccc;
+		}
+        form label{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 18px;
+			color: #333333;
+		}
+
+		input[type="text"] {
+			padding: 10px;
+			font-size: 18px;
+			border: #555555;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px #cccccc;
+			width: 80%;
+			margin-bottom: 20px;
+            margin-left: 30px;
+            text-align: center;
+		}
+
+		button[type="button"] {
+			padding: 10px 20px;
+            margin-left: 140px;
+			font-size: 18px;
+			color: #ffffff;
+			background-color: #007a10;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			box-shadow: 0px 0px 10px #cccccc;
+		}
+
+		button[type="submit"]:hover {
+			background-color: #dbdbdb;
+            color: #046b00;
+		}
+
+		.result {
+			font-size: 24px;
+			color: #333333;
+			margin-top: 20px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>Grading System</h1>
+	<form>
+		<label for="marks">Enter Your Percentage (Out of 100):</label>
+		<input type="text" id="marks" placeholder="Enter Your Percentage">
+        <button type="button" onclick="calculate()">Calculate</button>
+	</form>
+
+	<div class="result" id="result"></div>
+
+	<script>
+		function calculate() {
+			var marks = document.getElementById("marks").value;
+			var grade;
+
+			if (marks >= 90) {
+				grade = "A+";
+            } else if (marks >= 80) {
+				grade = "A";
+			} else if (marks >= 70) {
+				grade = "B+";
+			} else if (marks >= 60) {
+				grade = "B";
+			} else if (marks >= 50) {
+				grade = "C+";
+			} else if (marks >= 40) {
+				grade = "C";
+			} else if(marks <= 39){
+				grade = "Fail";
+			}
+
+			document.getElementById("result").innerHTML = "Your Grade is: " + grade;
+            return false;
+		}
+	</script>
+</body>
+</html>
